@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="initial-scale=1, width=device-width, height=device-height, viewport-fit=cover">
+        <title>Greedy Snake</title>
+        <style>
+            *{
+                -webkit-touch-callout: none;
+                -webkit-user-select: none; /* Disable selection/copy in UIWebView */
+            }
+            body
+            {
+                padding:0px;
+                margin:0px;
+            }
+
+        </style>
+
+        <!-- This is needed to access the PhoneGap JavaScript -->
+        <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+        <script>
+            window.onload = onAllAssetsLoaded;
+            document.write("<div id='loadingMessage'>Loading...</div>");
+            function onAllAssetsLoaded()
+            {
+                // Wait for Cordova to connect with the device
+                document.addEventListener("deviceready", onDeviceReady, false);
+            }
+
+
+            // Cordova is ready to be used!
+            function onDeviceReady()
+            {
+                // hide the webpage loading message
+                document.getElementById('loadingMessage').style.visibility = "hidden";
+                document.getElementById('pageContent').style.visibility = "visible";
+
+                window.location = "home.html";
+            }
+        </script>
+    </head>
+
+    <body>
+        <div id="pageContent">
+            <p>If you are not automatically redirected to the app home page, then <a href="home.html">click here</a>.</p>
+        </div>
+    </body>
+</html>

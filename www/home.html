@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="initial-scale=1, width=device-width, height=device-height, viewport-fit=cover">
+        <title>Home Page</title>
+        <link href="css/home.css" rel="stylesheet" type="text/css"/>
+        <!-- This is needed to access the PhoneGap JavaScript -->
+        <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+        <script>
+            window.onload = onAllAssetsLoaded;
+            var media;
+            function onAllAssetsLoaded()
+            {
+                // Wait for Cordova to connect with the device
+                document.addEventListener("deviceready", onDeviceReady, false);
+            }
+            // Cordova is ready to be used!
+            function onDeviceReady()
+            {
+                init();
+            }
+
+            function init()
+            {
+                media = new Media(cordova.file.applicationDirectory + "www/music/bird_whistle.mp3", mediaSuccess, mediaError, mediaStatus);
+                media.play({numberOfLoops: 9999});
+            }
+
+            function mediaError(e) {
+                console.log(e);
+            }
+
+            function mediaStatus(status) {
+                if (status === Media.MEDIA_STOPPED) {
+                    media.seekTo(0);
+                    media.play();
+                }
+            }
+
+            function mediaSuccess(e)
+            {
+                console.log(e);
+            }
+        </script>
+    </head>
+
+    <body>
+        <div id="main_menu_div">
+            <img id="snake" src="img/snake_icon.png" alt="snake_icon"/>
+            <h1 id="title">Hungry Snake</h1>
+            <a class="start_button" href="play_game.html"><button class="btn">Start</button></a>
+            <button id="historyBtn" onclick="popupOpen()">History</button>
+
+            <div class="overlay" id="overlay"></div>
+            <div class="popup" id="popup">
+                <div class="popup-inner">
+                    <input type="button" name="Close" class="s3-btn-close" onclick="popupClose();" value="&times;">
+                    <div id="scoreBoard"></div>
+                </div>
+            </div>
+        </div>
+        <script src="js/popUp.js" type="text/javascript"></script>
+        <script src="js/home.js" type="text/javascript"></script>
+    </body>
+</html>

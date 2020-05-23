@@ -1,0 +1,118 @@
+*{
+                -webkit-touch-callout: none;
+                -webkit-user-select: none; /* Disable selection/copy in UIWebView */
+            }
+
+            #canvas,
+            body
+            {
+                padding:0px;
+                margin:0px;
+            }
+
+            #canvas
+            {
+                position:fixed;
+                top:0px;
+                left:0px;
+                z-index:1;
+                width:100%;
+                height:100%;
+                background-image: url('../img/grass_background.png');
+            }
+
+            /* Overlay Styles */
+            .overlay {
+                background:rgba(0,0,0,0.8);
+                opacity:0.8;
+                filter:alpha(opacity=80);
+                position:fixed;
+                top:0px;
+                bottom:0px;
+                left:0px;
+                right:0px;
+                z-index:100;
+                display: none;
+            }
+
+            /* Popup */
+            .popup{
+                background:blueviolet;
+                position:absolute;
+                top:0;
+                left:0;
+                bottom:0;
+                right:0;
+                z-index:101;
+                width:500px; /*Change your width here*/
+                height:200px; /*Change your height here*/
+                margin:auto;
+                display: none;
+                transition:0.5s linear;
+            }
+
+
+            @media(max-width:768px)
+            {
+                .popup
+                {
+                    width:90%;
+                    margin:auto 5%;
+                }
+            }
+            /* Popup Inner */
+            .popup-inner{
+                position: relative;
+                padding: 1em;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            input.s3-btn-close{
+                position:absolute;
+                top:-0.5em;
+                right:-0.5em;
+
+                background:black;
+                border:solid 2px white;
+                color:white;
+                cursor:pointer;
+                border-radius:15px;
+                outline:none;
+            }
+
+            .button
+            {
+                width: 35%;
+                padding: 1%;
+            }
+
+            .btn
+            {
+                width: 35%;
+                background-color: black;
+                color: white;
+                border-radius: 32px;
+                user-select: none;
+                margin-top: 2%;
+            }
+
+            .ui-btn
+            {
+                color: blueviolet !important;
+            }
+
+            h1{
+                margin: 0;
+            }
+
+            .display_score
+            {
+                display:flex;
+            }
+
+            .display_score p
+            {
+                margin: 0;
+            }

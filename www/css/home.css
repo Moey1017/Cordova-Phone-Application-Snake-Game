@@ -1,0 +1,126 @@
+body{
+                background-color: #8E0DD8;
+            }
+            #main_menu_div
+            {
+                display: flex;   
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+            #snake
+            {
+                width: 100%;
+                height: 100%;
+                padding-top: 15%;
+            }
+            #title
+            {
+                justify-content: center;
+                display: flex;
+                font-size: 10vw;
+                margin: 0;
+                padding-bottom: 5%;
+            }
+
+            .start_button
+            {
+                width: 35%;
+                padding-bottom: 3%;
+            }
+
+            .btn
+            {
+                width: 100%;
+                background-color: black;
+                color: white;
+                border-radius: 32px;
+                user-select: none;
+            }
+
+            a
+            {
+                text-decoration:none;
+                font-size: 5vw;
+            }
+
+            /* Overlay Styles */
+            .overlay {
+                background:rgba(0,0,0,0.8);
+                opacity:0.8;
+                filter:alpha(opacity=80);
+                position:absolute;
+                top:0px;
+                bottom:0px;
+                left:0px;
+                right:0px;
+                z-index:100;
+                display: none;
+            }
+
+            /* Popup */
+            .popup{
+                background:blueviolet;
+                position:absolute;
+                top:0;
+                left:0;
+                bottom:0;
+                right:0;
+                z-index:101;
+                width:80%; /*Change your width here*/
+                height:70%; /*Change your height here*/
+                margin:auto;
+                display: none;
+            }
+
+
+            @media(max-width:768px)
+            {
+                .popup
+                {
+                    width:90%;
+                    margin:auto 5%;
+                }
+            }
+            /* Popup Inner */
+            .popup-inner{
+                position: relative;
+                padding: 1em;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            input.s3-btn-close{
+                position:absolute;
+                top:-0.5em;
+                right:-0.5em;
+
+                background:black;
+                border:solid 2px white;
+                color:white;
+                cursor:pointer;
+                border-radius:15px;
+                outline:none;
+            }
+
+            #historyBtn
+            {
+                width: 35%;
+                background-color: black;
+                color: white;
+                border-radius: 32px;
+            }
+
+            table {
+                border-collapse: collapse;
+                width: 100%;
+                font-size: 2em;
+            }
+            td, th {
+                padding: 0;
+                width: 100%;
+            }
+            .scores
+            {
+                text-align: center;
+            }
